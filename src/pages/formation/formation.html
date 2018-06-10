@@ -1,0 +1,24 @@
+<!--
+  Generated template for the FormationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>formation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="form" padding>
+  <ion-searchbar (ionInput)="searchFormation($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of MesFormation" (click)="infoFormationModal(item)">
+        <ion-icon [name]="item.icon" item-right></ion-icon>
+          {{item?.name}}
+        </ion-item>
+  </ion-list>
+</ion-content>

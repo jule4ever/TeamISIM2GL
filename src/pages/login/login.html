@@ -1,0 +1,52 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content class="login" padding>
+
+      <ion-card class="hea">
+          <ion-card-header>
+             <h1 >ISI-SCHOOL</h1>
+          </ion-card-header>
+      </ion-card>
+
+
+  <ion-card>
+    <ion-card-header>
+      LOGIN
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <ion-list no-lines>
+        <ion-item>
+          <ion-label floating> Identifiant</ion-label>
+          <ion-input type="text"
+               id="email"
+               formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating> Mot de passe</ion-label>
+            <ion-input 
+            type="password"
+               id="password"
+               formControlName="password"></ion-input>
+          </ion-item>
+        <ion-item>
+              <p>Password oublié ? <a>Click ici</a></p>
+        </ion-item>
+        <button ion-button  type="submit"
+              [disabled]="signupForm.invalid" id="connexion" color="primary" block>LOGIN</button>
+      </ion-list>
+      <b>OR</b>
+      <button ion-button  (click)="inscription()" id="inscription" color="secondary" block>Inscription</button>
+    </form>
+    <p class="text-danger">{{ errorMessage }}</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
